@@ -137,7 +137,8 @@ public function getCost()
     $body = json_decode($response->getBody(), true); 
     return $this->response->setJSON($body['data']);
 }
-public function buy()
+
+    public function buy()
 {
     if ($this->request->getPost()) { 
         $dataForm = [

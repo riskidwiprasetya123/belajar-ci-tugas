@@ -14,8 +14,8 @@ class Home extends BaseController
 
     function __construct()
     {
-        helper('form');
         helper('number');
+        helper('form');
         $this->product = new ProductModel();
         $this->transaction = new TransactionModel();
         $this->transaction_detail = new TransactionDetailModel();
@@ -29,8 +29,8 @@ class Home extends BaseController
         return view('v_home', $data);
     }
 
-    public function profile()
-    {
+   public function profile()
+{
     $username = session()->get('username');
     $data['username'] = $username;
 
@@ -53,7 +53,7 @@ class Home extends BaseController
 
     return view('v_profile', $data);
     }
-
+    
         public function faq()
     {
         return view('v_faq');

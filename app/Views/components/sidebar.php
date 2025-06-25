@@ -31,7 +31,12 @@
                     <span>Kategori Produk</span>
                 </a>
             </li><!-- End FAQ Nav -->
-            <li class="nav-item">
+
+        <?php
+        }
+        ?>
+
+        <li class="nav-item">
                 <a class="nav-link <?php echo (uri_string() == 'profile') ? "" : "collapsed" ?>" href="profile">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
@@ -49,10 +54,6 @@
                     <span>Contact</span>
                 </a>
             </li><!-- End Contact Nav -->
-
-        <?php
-        }
-        ?>
     </ul>
 
 </aside><!-- End Sidebar-->

@@ -56,7 +56,10 @@ History Transaksi Pembelian <strong><?= $username ?></strong>
 	                                        <?= "(" . $item2['jumlah'] . " pcs)" ?><br>
 	                                        <?= number_to_currency($item2['subtotal_harga'], 'IDR') ?>
 	                                        <hr>
-	                                    <?php endforeach;}?>
+	                                    <?php 
+	                                    endforeach; 
+                                    }
+                                    ?>
                                     Ongkir <?= number_to_currency($item['ongkir'], 'IDR') ?>
                                 </div>
                             </div>
