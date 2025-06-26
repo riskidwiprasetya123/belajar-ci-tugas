@@ -21,7 +21,7 @@ class ApiController extends ResourceController
         $this->apiKey = env('API_KEY');
         $this->user = new UserModel();
         $this->transaction = new TransactionModel();
-        $this->transaction_detail = new TransactionModel();
+        $this->transaction_detail = new TransactionDetailModel();
     }
     /**
      * Return an array of resource objects, themselves in array format.

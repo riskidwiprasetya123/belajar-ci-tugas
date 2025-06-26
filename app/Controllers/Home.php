@@ -52,7 +52,7 @@ class Home extends BaseController
     $data['product'] = $product;
 
     return view('v_profile', $data);
-    }
+}
     
         public function faq()
     {
