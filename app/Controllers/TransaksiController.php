@@ -21,7 +21,7 @@ class TransaksiController extends BaseController
         $this->client = new \GuzzleHttp\Client();
         $this->apiKey = env('COST_KEY');
         $this->transaction = new TransactionModel();
-        $this->transaction_detail = new TransactionModel();
+        $this->transaction_detail = new TransactionDetailModel();
     }
 
     public function index()
