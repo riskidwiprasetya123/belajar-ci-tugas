@@ -52,7 +52,7 @@ History Transaksi Pembelian <strong><?= $username ?></strong>
 	                                        <?php endif; ?>
 	                                        <strong><?= $item2['nama'] ?></strong>
 	                                        <?= number_to_currency($item2['harga'], 'IDR') ?>
-	                                        <br>
+	                                            <br>
 	                                        <?= "(" . $item2['jumlah'] . " pcs)" ?><br>
 	                                        <?= number_to_currency($item2['subtotal_harga'], 'IDR') ?>
 	                                        <hr>

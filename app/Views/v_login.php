@@ -21,7 +21,7 @@ $password = [
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
                 <img src="<?php echo base_url() ?>NiceAdmin/assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">Toko</span>
+                  <span class="d-none d-lg-block">Toko</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -35,13 +35,13 @@ $password = [
                   </div>
 
                   <?php
-                        if (session()->getFlashData('failed')) {
+                    if (session()->getFlashData('failed')) {
                     ?>
                         <div class="col-12 alert alert-danger" role="alert">
-                    <hr>
-                    <p class="mb-0">
-                        <?= session()->getFlashData('failed') ?>
-                    </p>
+                            <hr>
+                            <p class="mb-0">
+                                <?= session()->getFlashData('failed') ?>
+                            </p>
                         </div>
                     <?php
                     }
@@ -49,25 +49,25 @@ $password = [
 
                   <?= form_open('login', 'class = "row g-3 needs-validation"') ?>
 
-<div class="col-12">
-    <label for="yourUsername" class="form-label">Username</label>
-    <div class="input-group has-validation">
-        <span class="input-group-text" id="inputGroupPrepend">@</span>
-        <?= form_input($username) ?>
-        <div class="invalid-feedback">Please enter your username.</div>
-    </div>
-</div>
+                    <div class="col-12">
+                        <label for="yourUsername" class="form-label">Username</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            <?= form_input($username) ?>
+                            <div class="invalid-feedback">Please enter your username.</div>
+                        </div>
+                    </div>
 
-<div class="col-12">
-    <label for="yourPassword" class="form-label">Password</label>
-		    <?= form_password($password) ?>
-    <div class="invalid-feedback">Please enter your password!</div>
-</div>
-<div class="col-12">
-    <?= form_submit('submit', 'Login', ['class' => 'btn btn-primary w-100']) ?>
-</div>
+                    <div class="col-12">
+                        <label for="yourPassword" class="form-label">Password</label>
+                                <?= form_password($password) ?>
+                        <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+                    <div class="col-12">
+                        <?= form_submit('submit', 'Login', ['class' => 'btn btn-primary w-100']) ?>
+                    </div>
 
-<?= form_close() ?>
+                    <?= form_close() ?>
 
                 </div>
               </div>

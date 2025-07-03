@@ -9,11 +9,19 @@
   <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
 
-<div class="search-bar">
+<div class="search-bar d-flex justify-content-between align-items-center">
   <form class="search-form d-flex align-items-center" method="POST" action="#">
     <input type="text" name="query" placeholder="Search" title="Enter search keyword">
     <button type="submit" title="Search"><i class="bi bi-search"></i></button>
   </form>
+
+  <?php if (session()->has('diskon_nominal')) : ?>
+    <div class="ms-3">
+      <span class="badge bg-success fw-normal">
+        Hari ini ada diskon Rp<?= number_format(session('diskon_nominal'), 0, ',', '.') ?> per item
+      </span>
+    </div>
+  <?php endif; ?>
 </div><!-- End Search Bar -->
 
 <nav class="header-nav ms-auto">

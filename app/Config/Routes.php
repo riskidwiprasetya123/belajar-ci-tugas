@@ -20,13 +20,6 @@ $routes->group('produk', ['filter' => 'auth'], function ($routes) {
     $routes->get('download', 'ProdukController::download');
 });
 
-$routes->group('produk-kategori', ['filter' => 'auth'], function ($routes) { 
-    $routes->get('', 'ProdukKategoriController::index');
-    $routes->post('', 'ProdukKategoriController::create');
-    $routes->post('edit/(:any)', 'ProdukKategoriController::edit/$1');
-    $routes->get('delete/(:any)', 'ProdukKategoriController::delete/$1');
-});
-
 $routes->group('kategori', ['filter' => 'auth'], function ($routes) { 
     $routes->get('', 'KategoriController::index');
     $routes->post('', 'KategoriController::create');
@@ -42,14 +35,21 @@ $routes->group('keranjang', ['filter' => 'auth'], function ($routes) {
     $routes->get('clear', 'TransaksiController::cart_clear');
 });
 
+$routes->get('diskon', 'DiskonController::index', ['filter' => 'authAdmin']);
+$routes->post('diskon/save', 'DiskonController::save', ['filter' => 'authAdmin']);
+$routes->get('diskon/delete/(:num)', 'DiskonController::delete/$1', ['filter' => 'authAdmin']);
+
+$routes->get('pembelian', 'PembelianController::index', ['filter' => 'auth']);
+$routes->get('pembelian/ubah/(:num)', 'PembelianController::ubahStatus/$1', ['filter' => 'auth']);
+
 $routes->get('checkout', 'TransaksiController::checkout', ['filter' => 'auth']);
 $routes->post('buy', 'TransaksiController::buy', ['filter' => 'auth']);
+
 $routes->get('get-location', 'TransaksiController::getLocation', ['filter' => 'auth']);
 $routes->get('get-cost', 'TransaksiController::getCost', ['filter' => 'auth']);
-$routes->get('keranjang', 'TransaksiController::index', ['filter' => 'auth']);
 
-$routes->get('profile', 'Home::profile', ['filter' => 'auth']);
 $routes->get('faq', 'Home::faq', ['filter' => 'auth']);
-$routes->get('contact', 'Home::contact', ['filter' => 'auth']);
+$routes->get('profile', 'Home::profile', ['filter' => 'auth']);
+$routes->get('/contact', 'ContactController::index');
 
 $routes->resource('api', ['controller' => 'apiController']);

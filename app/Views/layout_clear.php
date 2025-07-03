@@ -46,10 +46,12 @@ if(uri_string()!=""){
 
 <body>
   <main>
-    
-          <?= $this->renderSection('content') ?>
-          
+
+            <?= $this->renderSection('content') ?>
+
   </main><!-- End #main -->
+
+  <?= $this->include('components/footer') ?>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -64,7 +66,7 @@ if(uri_string()!=""){
   <script src="<?= base_url()?>NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="<?= base_url()?>NiceAdmin/assets/vendor/js/main.js"></script>
+  <script src="<?= base_url()?>NiceAdmin/assets/js/main.js"></script>
 
 </body>
 
